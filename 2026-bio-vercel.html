@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026_生物_激素與變態發育_考題版</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #2ECC71;
+            --dark: #1A1A1B;
+            --card: #282829;
+            --text: #E8EAED;
+        }
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: auto; }
+        .module {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+        }
+        h2 { color: var(--primary); border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .quiz-option {
+            display: block;
+            background: #3e3e3f;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .quiz-option:hover { background: #4e4e4f; }
+        .feedback { display: none; margin-top: 10px; padding: 10px; border-radius: 5px; }
+        .correct { background: #1b5e20; color: #fff; }
+        .wrong { background: #b71c1c; color: #fff; }
+        .badge { background: var(--primary); color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header style="text-align: center; margin-bottom: 30px;">
+        <h1>R.I.C.O. 智慧學習系統</h1>
+        <p>單元：神經系統與內分泌系統 (Nervous & Endocrine Systems)</p>
+    </header>
+
+    <section class="module">
+        <h2><span class="badge">Study Guide</span> 核心解析</h2>
+        <p><strong>試題原文：</strong>某些生物在生長發育過程中，會出現顯著的形態轉變，例如蝌蚪變態為青蛙。這是由什麼物質引起的？</p>
+        <p><strong>正確答案：</strong><span style="color:var(--primary); font-weight:bold;">(A) 激素 (Hormone)</span></p>
+        <p><strong>關鍵字解讀：</strong></p>
+        <ul>
+            <li>形態轉變 (Morphological changes)：指發育過程中的結構重組。</li>
+            <li>甲狀腺素 (Thyroid hormone)：蝌蚪變態的核心驅動者。</li>
+        </ul>
+    </section>
+
+    <section class="module">
+        <h2><span class="badge">Concept Simplified</span> 生活轉譯：軟體更新協定</h2>
+        <p>想像<strong>蝌蚪變態為青蛙</strong>就像是一次手機作業系統的「重大版本升級 (Major Update)」：</p>
+        <ul>
+            <li><strong>神經系統：</strong>像是「即時指令」，你按螢幕，燈就亮，追求極速反應。</li>
+            <li><strong>激素系統：</strong>像是「系統更新檔」。當硬體（身體）準備好了，雲端發送更新指令（激素），全機底層代碼（細胞）開始重寫。這不追求快，但追求的是<strong>徹底的架構重組</strong>。</li>
+        </ul>
+    </section>
+
+    <section class="module">
+        <h2><span class="badge">Visual</span> 發育調控邏輯</h2>
+        <div class="mermaid">
+        graph TD
+            A[環境與時間信號] --> B[內分泌腺體 Endocrine Gland]
+            B -->|釋放| C[激素 Hormone]
+            C -->|血液運輸| D[目標細胞 Target Cells]
+            D --> E{觸發形態轉變}
+            E -->|案例| F[蝌蚪尾巴消失]
+            E -->|案例| G[肺部發育]
+        </div>
+    </section>
+
+    <section class="module">
+        <h2><span class="badge">Quiz</span> 即時戰力檢測</h2>
+        <p>若某湖泊受到化學干擾，導致蝌蚪體內的「甲狀腺素」無法分泌，最可能發生什麼結果？</p>
+        <div class="quiz-option" onclick="checkAnswer(false, 'opt1')">A. 蝌蚪會立即死亡</div>
+        <div class="quiz-option" onclick="checkAnswer(true, 'opt2')">B. 蝌蚪持續生長但無法變態成青蛙</div>
+        <div class="quiz-option" onclick="checkAnswer(false, 'opt3')">C. 蝌蚪會提早變成迷你青蛙</div>
+        <div id="quiz-feedback" class="feedback"></div>
+    </section>
+
+</div>
+
+<script>
+    mermaid.initialize({startOnLoad:true, theme:'dark'});
+    
+    function checkAnswer(isCorrect, opt) {
+        const feedback = document.getElementById('quiz-feedback');
+        feedback.style.display = 'block';
+        if(isCorrect) {
+            feedback.className = 'feedback correct';
+            feedback.innerHTML = '正確！激素是發育的啟動器，缺乏它就像升級檔下載失敗，生物會停留在幼體階段。';
+        } else {
+            feedback.className = 'feedback wrong';
+            feedback.innerHTML = '再想想！激素主要負責「轉化指令」，缺乏指令不會立即死亡，而是無法切換形態。';
+        }
+    }
+</script>
+
+</body>
+</html>
